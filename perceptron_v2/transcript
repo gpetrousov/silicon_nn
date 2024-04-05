@@ -1,0 +1,615 @@
+# Loading project perceptron_v2
+# reading /opt/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project neural_network_v1
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd failed with 3 errors.
+# 4 compiles, 2 failed with 6 errors.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd failed with 3 errors.
+# 4 compiles, 2 failed with 6 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of neural_network_rtl.vhd failed with 6 errors.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# 2 compiles, 1 failed with 6 errors.
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 10:46:36 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v3(rtl)
+# Loading work.relu_v3(rtl)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (64) for port "/neural_network_v1_tb/i_layer_1/layer_2/x".
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_layer_1/layer_2 File: /home/master/dev/phd/learning_VHDL/neural_network_v1/relu_rtl.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:46:36 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 15
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 10:51:36 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v2(rtl)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (64) for port "/neural_network_v1_tb/i_neural_network_v1/layer_2/x".
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2 File: /home/master/dev/phd/learning_VHDL/neural_network_v1/relu_rtl.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:51:36 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 10:59:13 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v2(rtl)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (64) for port "/neural_network_v1_tb/i_neural_network_v1/layer_2/x".
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2 File: /home/master/dev/phd/learning_VHDL/neural_network_v1/relu_rtl.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 10:59:13 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:02:46 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v2(rtl)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (64) for port "/neural_network_v1_tb/i_neural_network_v1/layer_2/x".
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2 File: /home/master/dev/phd/learning_VHDL/neural_network_v1/relu_rtl.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:02:46 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:04:19 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v2(rtl)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (64) for port "/neural_network_v1_tb/i_neural_network_v1/layer_2/x".
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2 File: /home/master/dev/phd/learning_VHDL/neural_network_v1/relu_rtl.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 11:04:19 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of neural_network_rtl.vhd failed with 1 errors.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:06:05 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# ** Error: (vsim-13) Recompile work.relu_v3(rtl) because work.relu_v3 has changed.
+# Load interrupted
+# Error loading design
+# End time: 11:06:05 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:06:28 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# ** Error: (vsim-13) Recompile work.relu_v3(rtl) because work.relu_v3 has changed.
+# Load interrupted
+# Error loading design
+# End time: 11:06:28 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful with warnings.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:07:16 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v3(rtl)
+add wave -position end  sim:/neural_network_v1_tb/x_tb
+add wave -position end  sim:/neural_network_v1_tb/w_tb
+add wave -position end  sim:/neural_network_v1_tb/b_tb
+add wave -position end  sim:/neural_network_v1_tb/y_tb
+run
+# Break key hit
+# Break in Process line__25 at /home/master/dev/phd/learning_VHDL/neural_network_v1/neural_network_tb.vhd line 57
+quit -sim
+# End time: 11:09:07 on Apr 05,2024, Elapsed time: 0:01:51
+# Errors: 0, Warnings: 2
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:09:30 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v3(rtl)
+add wave -position end  sim:/neural_network_v1_tb/x_tb
+add wave -position end  sim:/neural_network_v1_tb/w_tb
+add wave -position end  sim:/neural_network_v1_tb/b_tb
+add wave -position end  sim:/neural_network_v1_tb/y_tb
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break key hit
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+run
+run
+run
+run
+run
+add dataflow sim:/neural_network_v1_tb/*
+# WARNING: No extended dataflow license exists
+quit -sim
+# End time: 11:14:58 on Apr 05,2024, Elapsed time: 0:05:28
+# Errors: 0, Warnings: 7
+# Compile of neural_network_rtl.vhd was successful.
+# Compile of neural_network_tb.vhd was successful.
+# Compile of neuron_rtl.vhd was successful.
+# Compile of neuron_tb.vhd was successful.
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.neuron_v2_tb
+# vsim work.neuron_v2_tb 
+# Start time: 11:15:16 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neuron_v2_tb(sim)
+# Loading work.neuron_v2(rtl)
+add wave -position end  sim:/neuron_v2_tb/x_tb
+add wave -position end  sim:/neuron_v2_tb/w_tb
+add wave -position end  sim:/neuron_v2_tb/b_tb
+add wave -position end  sim:/neuron_v2_tb/y_tb
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neuron_v2_tb/i_neuron
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neuron_v2_tb/i_neuron
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neuron_v2_tb/i_neuron
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neuron_v2_tb/i_neuron
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 11:17:29 on Apr 05,2024, Elapsed time: 0:02:13
+# Errors: 0, Warnings: 6
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.relu_v3_tb
+# vsim work.relu_v3_tb 
+# Start time: 11:18:01 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.relu_v3_tb(sim)
+# Loading work.relu_v3(rtl)
+add wave -position end  sim:/relu_v3_tb/x_tb
+add wave -position end  sim:/relu_v3_tb/y_tb
+run
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 0 ps  Iteration: 0  Instance: /relu_v3_tb
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /relu_v3_tb/i_ReLU
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 11:19:43 on Apr 05,2024, Elapsed time: 0:01:42
+# Errors: 0, Warnings: 3
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.relu_v3_tb
+# vsim work.relu_v3_tb 
+# Start time: 11:19:59 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.relu_v3_tb(sim)
+# Loading work.relu_v3(rtl)
+add wave -position end  sim:/relu_v3_tb/x_tb
+add wave -position end  sim:/relu_v3_tb/y_tb
+# Compile of relu_rtl.vhd was successful.
+# Compile of relu_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+run
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 0 ps  Iteration: 0  Instance: /relu_v3_tb
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /relu_v3_tb/i_ReLU
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 10 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 20 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 30 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 40 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 50 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 60 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 60 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 60 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 70 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 80 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 90 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 100 ns  Iteration: 0  Instance: /relu_v3_tb
+run
+# ** Note: =======> x_tb=-1
+#    Time: 110 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 120 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 120 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 120 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 130 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 140 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 150 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 160 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 170 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 180 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 180 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 180 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 190 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 200 ns  Iteration: 0  Instance: /relu_v3_tb
+run
+# ** Note: =======> x_tb=1
+#    Time: 210 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 220 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 230 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 240 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 240 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 240 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 250 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 260 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 270 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 280 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 290 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 300 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 300 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 300 ns  Iteration: 0  Instance: /relu_v3_tb
+run
+# ** Note: =======> x_tb=-100
+#    Time: 310 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 320 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 330 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 340 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 350 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 360 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 360 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 360 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 370 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 380 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 390 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 400 ns  Iteration: 0  Instance: /relu_v3_tb
+run
+# ** Note: =======> x_tb=-1
+#    Time: 410 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 420 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 420 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 420 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 430 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 440 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=1
+#    Time: 450 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=53
+#    Time: 460 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-1
+#    Time: 470 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-10
+#    Time: 480 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== END! ==========#
+#    Time: 480 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: #=========== BEGIN! ==========#
+#    Time: 480 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=-100
+#    Time: 490 ns  Iteration: 0  Instance: /relu_v3_tb
+# ** Note: =======> x_tb=0
+#    Time: 500 ns  Iteration: 0  Instance: /relu_v3_tb
+quit -sim
+# End time: 11:20:33 on Apr 05,2024, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 5
+vsim work.neural_network_v1_tb
+# vsim work.neural_network_v1_tb 
+# Start time: 11:20:43 on Apr 05,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.neural_network_v1_tb(sim)
+# Loading work.neural_network_v1(rtl)
+# Loading work.neuron_v2(rtl)
+# Loading work.relu_v3(rtl)
+add wave -position end  sim:/neural_network_v1_tb/x_tb
+add wave -position end  sim:/neural_network_v1_tb/w_tb
+add wave -position end  sim:/neural_network_v1_tb/b_tb
+add wave -position end  sim:/neural_network_v1_tb/y_tb
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /neural_network_v1_tb/i_neural_network_v1/layer_2
+run
+run
+run
+run
+

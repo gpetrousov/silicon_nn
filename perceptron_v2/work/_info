@@ -1,0 +1,201 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/master/dev/phd/learning_VHDL/perceptron_v1
+Eneuron_v2
+Z0 w1712168197
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 53
+Z6 d/home/master/dev/phd/learning_VHDL/perceptron_v2
+Z7 8/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_rtl.vhd
+Z8 F/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_rtl.vhd
+l0
+L6 1
+V1GGL3GcKZL]7bNHnBAT=m1
+!s100 blfF_FQ0_?I2gdP`Y5^Y@0
+Z9 OV;C;2020.1;71
+32
+Z10 !s110 1712168411
+!i10b 1
+Z11 !s108 1712168411.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_rtl.vhd|
+Z13 !s107 /home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_rtl.vhd|
+!i113 1
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+R4
+R5
+Z16 DEx4 work 9 neuron_v2 0 22 1GGL3GcKZL]7bNHnBAT=m1
+!i122 53
+l24
+L23 7
+Vd>FGoKoAE8oYTlfzHn]n21
+!s100 M8b8d=SUnE[Tc=zfemlhK3
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Eneuron_v2_tb
+Z17 w1712168399
+R1
+R2
+R3
+R4
+R5
+!i122 54
+R6
+Z18 8/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_tb.vhd
+Z19 F/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_tb.vhd
+l0
+L6 1
+Vd[P`ZPFgC5BWIo[EYf0TT3
+!s100 6^^k7J?H^U8V^Rbj@]JLZ2
+R9
+32
+R10
+!i10b 1
+R11
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_tb.vhd|
+Z21 !s107 /home/master/dev/phd/learning_VHDL/perceptron_v2/neuron_tb.vhd|
+!i113 1
+R14
+R15
+Asim
+R16
+R1
+R2
+R3
+R4
+R5
+Z22 DEx4 work 12 neuron_v2_tb 0 22 d[P`ZPFgC5BWIo[EYf0TT3
+!i122 54
+l14
+Z23 L9 49
+VW=cO0LVPEZSCJH2e?m`oU1
+!s100 a4_ZUOHLo@6DCN2GQDCYT2
+R9
+32
+R10
+!i10b 1
+R11
+R20
+R21
+!i113 1
+R14
+R15
+Erelu_v2
+Z24 w1712158476
+R1
+R2
+R5
+R4
+R3
+!i122 37
+R6
+Z25 8/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_rtl.vhd
+Z26 F/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_rtl.vhd
+l0
+L6 1
+V:OH`MgYb3]nL]=^0@eCe^0
+!s100 Djl<MS0AU:UH9<jzK;]:h3
+R9
+32
+Z27 !s110 1712159436
+!i10b 1
+Z28 !s108 1712159436.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_rtl.vhd|
+Z30 !s107 /home/master/dev/phd/learning_VHDL/perceptron_v2/relu_rtl.vhd|
+!i113 1
+R14
+R15
+Artl
+R1
+R2
+R5
+R4
+R3
+Z31 DEx4 work 7 relu_v2 0 22 :OH`MgYb3]nL]=^0@eCe^0
+!i122 37
+l22
+L21 11
+V5ac4YOzS3jY:8a4ALoz1n2
+!s100 Vm1l?=S?3i=ZIkSb7_EWE3
+R9
+32
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R14
+R15
+Erelu_v2_tb
+Z32 w1712159431
+R1
+R2
+R5
+R4
+R3
+!i122 38
+R6
+Z33 8/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_tb.vhd
+Z34 F/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_tb.vhd
+l0
+L6 1
+V^RPPNcoal39l[J:2>1^D10
+!s100 K2S6dR?EWFK0i87B0JDgd3
+R9
+32
+R27
+!i10b 1
+R28
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/master/dev/phd/learning_VHDL/perceptron_v2/relu_tb.vhd|
+Z36 !s107 /home/master/dev/phd/learning_VHDL/perceptron_v2/relu_tb.vhd|
+!i113 1
+R14
+R15
+Asim
+R31
+R1
+R2
+R5
+R4
+R3
+DEx4 work 10 relu_v2_tb 0 22 ^RPPNcoal39l[J:2>1^D10
+!i122 38
+l12
+L9 45
+VI[VjMTCBJn>M^YkI=gM863
+!s100 Xzl?inbXKN6f5Z6HTo4681
+R9
+32
+R27
+!i10b 1
+R28
+R35
+R36
+!i113 1
+R14
+R15
