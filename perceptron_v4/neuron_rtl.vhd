@@ -32,6 +32,8 @@ architecture rtl of Neuron_v3 is
 begin
   process (clk) is
   begin
-    y <= x * w + b;
+    if rising_edge(clk) then
+      y <= x * w + b;
+    end if;
   end process;
 end architecture;

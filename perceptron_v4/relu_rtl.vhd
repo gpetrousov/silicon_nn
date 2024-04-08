@@ -25,11 +25,13 @@ architecture rtl of ReLU_v4 is
 begin
   process (clk) is
   begin
-    -- TODO: how does if translate to gates?
-    if x > "0000000000000000000000000000000000000000000000000000000000000000" then
-      y <= x;
-    else
-      y <= "0000000000000000000000000000000000000000000000000000000000000000";
+    if rising_edge(clk) then
+      -- TODO: how does if translate to gates?
+      if x > "0000000000000000000000000000000000000000000000000000000000000000" then
+        y <= x;
+      else
+        y <= "0000000000000000000000000000000000000000000000000000000000000000";
+      end if;
     end if;
   end process;
 end architecture;
