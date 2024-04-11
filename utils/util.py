@@ -113,7 +113,12 @@ def sigint_add_bw(n1_range, n2_range):
     return get_bw(max_magnitude)
 
 
-def
+def sigint_mul_bw(n1_range, n2_range):
+
+    min_result = abs(n1_range[0] * n2_range[0])
+    max_result = abs(n1_range[1] * n2_range[1])
+    max_magnitude = max(min_result, max_result)
+    return get_bw(max_magnitude)
 
 
 if __name__ == "__main__":
