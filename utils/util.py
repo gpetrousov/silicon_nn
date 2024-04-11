@@ -65,6 +65,13 @@ def fp_div():
     raise Exception("Not implemented")
 
 
+def get_bw(magnitude):
+    """
+    Return the magnitude of the number and the required signal bitwidth.
+    """
+    return magnitude, ceil(log2(abs(magnitude)+1))
+
+
 def sigint_add_bw(n1_range, n2_range):
     """
     Calculate the required number of bits for an addition of two signed
@@ -100,10 +107,13 @@ def sigint_add_bw(n1_range, n2_range):
     """
 
     # Convert to absolute magnitudes
-    min_result = abs(n1_range[0] + n1_range[0])
-    max_result = abs(n1_range[1] + n1_range[1])
+    min_result = abs(n1_range[0] + n2_range[0])
+    max_result = abs(n1_range[1] + n2_range[1])
     max_magnitude = max(min_result, max_result)
-    return max_magnitude, ceil(log2(abs(max_magnitude)+1))
+    return get_bw(max_magnitude)
+
+
+def
 
 
 if __name__ == "__main__":
