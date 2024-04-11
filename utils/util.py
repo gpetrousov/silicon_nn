@@ -114,6 +114,13 @@ def sigint_add_bw(n1_range, n2_range):
 
 
 def sigint_mul_bw(n1_range, n2_range):
+    """
+    Calculate the required number of bits for a multiplication of two signed
+    signals. The calculation assumes that negative values are always in
+    two's complement.
+
+    Does the same thing as sigint_add_bw() but for multiplication.
+    """
 
     min_result = abs(n1_range[0] * n2_range[0])
     max_result = abs(n1_range[1] * n2_range[1])
