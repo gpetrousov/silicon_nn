@@ -1,41 +1,69 @@
 from math import floor, ceil, log2
 
 
-def to_fixed_point(inp_num, nof_fp_bits):
+def fixed_point_to_float(fp_num, m, n, debug=False):
     """
-    Returns the representation of a floating point number using integers.
-    https://www.youtube.com/watch?v=Is67DfCdvcE
-
-    inp_num : the number we want to convert to fixed point
-    nof_fp_bits : total number of bits for the fix point numbers/registers
-    """
-    s1 = inp_num * 2**(nof_fp_bits/2)
-    s2 = floor(s1)
-    s3 = bin(s2)[2:]
-    fix_point_bin = s3.zfill(nof_fp_bits)
-    return fix_point_bin
-
-
-def to_float(inp_num):
-    """
-    Converts a fix point arithmetic number back to float.
+    Converts a fix point integer number back to (real) float.
     May introduce quantization error.
+    We're using Q number notation: https://en.wikipedia.org/wiki/Q_(number_format)
+
+    INPUT:
+        - n: Fixed point integer number
+        - m: number of integer bits
+        - n: number of decimal bits
+
+    OUTPUT: The quantized result of the fixed point number
     """
-    int_part = inp_num[0:int(len(inp_num)/2)][::-1]
-    int_part_num = 0
 
-    for i in range(len(int_part)):
-        if int_part[i] == '1':
-            int_part_num += 2**i
+    # expand the number to word length
+    bfp = bin(fp_num)[2:]
+    bfp = bfp.zfill(m+n)
 
-    float_part = inp_num[len(int_part):]
-    float_part_num = 0
+    # Extract integer part
+    bin_int_part = bfp[0:m]
+    rev_bin_int_part = bin_int_part[::-1]
 
-    for i in range(len(float_part)):
-        if float_part[i] == '1':
-            float_part_num += 1/(2**(i+1))
+    # Integer part calculation
+    int_part_sum = 0
+    for i in range(len(rev_bin_int_part)):
+        if debug:
+            print(f"i={i}, n={rev_bin_int_part[i]}")
+        int_part_sum += int(rev_bin_int_part[i]) * 2**i
 
-    return int_part_num + float_part_num
+    # Extract decimal part
+    bin_float_part = bfp[m:]
+
+    # Float part calculation
+    float_part_sum = 0
+    for i in range(len(bin_float_part)):
+        if debug:
+            print(f"i={i}, n={bin_float_part[i]}, {1/2**(i+1)}")
+        if bin_float_part[i] == '1':
+            float_part_sum += 1/2**(i+1)
+
+    return int_part_sum + float_part_sum
+
+
+def float_to_fixed_point_int(fl_num, n):
+    """
+    Returns the fixed point integer of the given floating point number.
+
+    INPUT:
+        - fl_num : the number we want to convert to fixed point
+        - m : the number of fractional bits
+
+    Example:
+        float_to_fixed_point_int(3.14, 13)
+        >>> 25722
+    """
+
+    return floor(fl_num * 2**n)
+
+
+def float_to_fixed_point_bin(fl_num, m, n):
+    s1 = floor(fl_num * 2**n)
+    s2 = bin(s1)[2:]
+    return s2.zfill(n+m)
 
 
 def fp_add_d(n1, n2):
@@ -129,4 +157,7 @@ def sigint_mul_bw(n1_range, n2_range):
 
 
 if __name__ == "__main__":
-    print(sigint_add_bw((-200, 100), (-20, 20)))
+    #print(sigint_add_bw((-200, 100), (-20, 20)))
+    #print(to_fixed_point(3.14, 16))
+    #print(to_float(to_fixed_point(3.14, 16)))
+    print(to_float('0b10101100'))
