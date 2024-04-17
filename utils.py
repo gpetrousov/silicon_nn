@@ -1,7 +1,7 @@
 from math import floor, ceil, log2
 
 
-def fixed_point_to_float(fp_num, m, n, debug=False):
+def fixed_point_to_float_analytical(fp_num, m, n, debug=False):
     """
     Converts a fix point integer number back to (real) float.
     May introduce quantization error.
@@ -44,6 +44,14 @@ def fixed_point_to_float(fp_num, m, n, debug=False):
     return int_part_sum + float_part_sum
 
 
+def fixed_point_to_float(fp_num, n):
+    """
+    Improved conversion from fixed point to float.
+    Deprecated version: fixed_point_to_float_analytical().
+    """
+    return fp_num/(2**n)
+
+
 def float_to_fixed_point_int(fl_num, n):
     """
     Returns the fixed point integer of the given floating point number.
@@ -64,6 +72,17 @@ def float_to_fixed_point_bin(fl_num, m, n):
     s1 = floor(fl_num * 2**n)
     s2 = bin(s1)[2:]
     return s2.zfill(n+m)
+
+
+def twos_comp(val, bits):
+    """compute the 2's complement of int value val"""
+    if (val & (1 << (bits - 1))) != 0: # if sign bit is set e.g., 8bit: 128-255
+        val = val - (1 << bits)        # compute negative value
+    return val
+
+
+def bin_to_twos_complement(bn_num):
+    return
 
 
 def fp_add_d(n1, n2):
