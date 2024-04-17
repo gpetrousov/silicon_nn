@@ -81,35 +81,43 @@ def twos_comp(val, bits):
     return val
 
 
-def bin_to_twos_complement(bn_num):
-    return
-
-
-def fp_add_d(n1, n2):
+def fixed_point_add(n1, n2):
     """
     Perform addition of fixed point numbers.
-    This function uses the integer representation
-    of the numbers to be added because handling binary
-    operations is tough.
     """
-    bw = len(n1)
-    n1_d = int(n1, 2)
-    n2_d = int(n2, 2)
-    res_d = n1_d + n2_d
-    res_b = bin(res_d)[2:].zfill(bw)
-    return res_b
+    return n1 + n1
 
 
-def fp_sub():
-    raise Exception("Not implemented")
+def fixed_point_sub(n1, n2):
+    """
+    Perform addition of fixed point numbers.
+    """
+    return n1 - n1
 
 
-def fp_mul():
-    raise Exception("Not implemented")
+def fixed_point_mul(num1, num2):
+    """
+    INPUT:
+        The input is in the form of a tuple: t, where
+        t = (fixed_point_number, n) where n is the number of fractional bits.
 
+    OUTPUT:
+        - num3: fixed point multiplication result
+        - frac: the fractional bitwidth of the new number
 
-def fp_div():
-    raise Exception("Not implemented")
+    You can use that result to convert it back to a real number:
+        fixed_point_to_float(num3, frac)
+
+    EXAMPLE:
+        fp1 = utils.float_to_fixed_point_int(3.1, 13)
+        fp2 = utils.float_to_fixed_point_int(2.7, 12)
+        nfp, frac = utils.fixed_point_mul(num1=(fp1, 13), num2=(fp2, 12))
+        utils.fixed_point_to_float(nfp, frac)
+        >>> 8.369782716035843
+    """
+    num3 = num1[0] * num2[0]
+    frac = num1[1] + num2[1]
+    return num3, frac
 
 
 def get_bw(magnitude):
@@ -173,10 +181,3 @@ def sigint_mul_bw(n1_range, n2_range):
     max_result = abs(n1_range[1] * n2_range[1])
     max_magnitude = max(min_result, max_result)
     return get_bw(max_magnitude)
-
-
-if __name__ == "__main__":
-    #print(sigint_add_bw((-200, 100), (-20, 20)))
-    #print(to_fixed_point(3.14, 16))
-    #print(to_float(to_fixed_point(3.14, 16)))
-    print(to_float('0b10101100'))
