@@ -4,7 +4,7 @@ Journey with creating hardware (silicon) neural networks.
 
 ## Files and Directories
 
-**`perceptron_v1`**:
+### perceptron_v1
 
 - Using `integer` to define I/O.
 - Created:
@@ -12,7 +12,7 @@ Journey with creating hardware (silicon) neural networks.
   - `ReLU`
 
 
-**`perceptron_v2`**:
+### perceptron_v2
 
 - Used:
     - `std_logic_vector`
@@ -21,20 +21,20 @@ Journey with creating hardware (silicon) neural networks.
     - `neuron`
     - `ReLU`.
 
-**`perceptron_v3`**:
+### perceptron_v3
 
 - Using `component` to bind `neuron` and `relu` I/O.
 - Created:
   - `perceptron`
 
 
-**`perceptron_v4`**:
+### perceptron_v4
 
 - Introduced `clk`
 - Created `clk process`
 
 
-**`perceptron_v5`**:
+### perceptron_v5
 
 Experimented with using `Fixed Point Arithmetic` to represent floating point numbers.
 
