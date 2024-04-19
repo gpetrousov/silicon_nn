@@ -1,3 +1,4 @@
+-------------- Std Libraries
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -5,6 +6,8 @@ use ieee.std_logic_1164.all;
 LIBRARY ieee;
 Library floatfixlib; 
 use floatfixlib.fixed_pkg.all;
+
+-------------- Entity
 
 entity adder is
   port (
@@ -14,6 +17,8 @@ entity adder is
     sum : out  sfixed(3 downto -8)   -- Signed fixed-point output (9 bits total, 8 fractional bits)
   );
 end entity adder ;
+
+-------------- Architecture
 
 architecture rtl of adder is
 
