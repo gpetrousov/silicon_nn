@@ -41,3 +41,8 @@ Experimented with using `Fixed Point Arithmetic` to represent floating point num
 Made changes only to the `neuron`.
 
 Simulation looks good!
+
+### perceptron_fflib
+
+A functioning perceptron which uses fixed point arithmetic for floating point numbers.
+
