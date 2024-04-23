@@ -9,3 +9,8 @@ transcript
 *.pyc
 *.cf
 *.o
+*.qdb
+*.qpg
+*.qtl
+_info
+_vmake
