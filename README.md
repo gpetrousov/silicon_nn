@@ -46,3 +46,6 @@ Simulation looks good!
 
 A functioning perceptron which uses fixed point arithmetic for floating point numbers.
 
+### fflib_howto
+
+Examples of how to use the fixed point arithmetic library in `VHDL`.
