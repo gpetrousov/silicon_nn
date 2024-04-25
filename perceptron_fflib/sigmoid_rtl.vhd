@@ -8,7 +8,7 @@ Library floatfixlib;
 use floatfixlib.fixed_pkg.all;
 
 -- Entity
-entity sigmoid_lut is
+entity sigmoid_rtl is
   port (
          clk : in  STD_LOGIC;
          addr : in  sfixed(7 downto -9);
@@ -23,7 +23,7 @@ end entity;
 -- 00000000101010000: 00000000101010001
 
 -- Architecture
-architecture rtl of sigmoid_lut is
+architecture rtl of sigmoid_rtl is
 begin
   process(clk)
   begin

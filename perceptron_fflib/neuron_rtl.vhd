@@ -9,7 +9,7 @@ use floatfixlib.fixed_pkg.all;
 
 -------------- Entity
 
-entity Neuron_ff is
+entity neuron_rtl is
   port(
     -- input signals
     in1 : in sfixed(2 downto -1);
@@ -21,11 +21,11 @@ entity Neuron_ff is
     -- output signals
     y : out sfixed(7 downto -9)
   );
-end Neuron_ff; 
+end neuron_rtl; 
 
 -------------- Architecture
 
-architecture rtl of Neuron_ff is
+architecture rtl of neuron_rtl is
 
   constant W1 : sfixed(2 downto -8) := to_sfixed(1.77, 2, -8);
   constant W2 : sfixed(2 downto -8) := to_sfixed(1.81, 2, -8);

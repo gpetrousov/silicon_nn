@@ -8,7 +8,7 @@ LIBRARY ieee;
 Library floatfixlib; 
 use floatfixlib.fixed_pkg.all;
 
-entity Perceptron_ff is
+entity perceptron_rtl is
 
   port(
     -- input signals
@@ -23,9 +23,9 @@ entity Perceptron_ff is
   );
 end entity;
 
-architecture rtl of Perceptron_ff is
+architecture rtl of perceptron_rtl is
   -- component declarations
-  component Neuron_ff is
+  component neuron_rtl is
     port(
       in1 : in sfixed(2 downto -1);
       in2 : in sfixed(2 downto -1);
@@ -34,7 +34,7 @@ architecture rtl of Perceptron_ff is
     );
   end component;
 
-  component sigmoid_lut is
+  component sigmoid_rtl is
     port(
       -- input signals
       addr : in sfixed(7 downto -9);
@@ -50,14 +50,14 @@ architecture rtl of Perceptron_ff is
 
 begin
 
-  layer_1: Neuron_ff port map(
+  layer_1: neuron_rtl port map(
     in1 => in1_perc,
     in2 => in2_perc,
     clk => clk_perc,
     y => l1
   );
 
-  layer_2: sigmoid_lut port map(
+  layer_2: sigmoid_rtl port map(
     addr => l1,
     clk => clk_perc,
     data_out => l2
