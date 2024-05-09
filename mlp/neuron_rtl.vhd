@@ -18,7 +18,7 @@ entity neuron_rtl is
     nof_in_features : integer := 2;
     nof_out_features : integer := 1;
     m : integer := 4;
-    n : integer := 8;
+    n : integer := 8
   );
 
   port(
@@ -27,36 +27,39 @@ entity neuron_rtl is
 		rst : in std_logic;
 
     -- input signals
-    in_features : in nn_io_matrix(nof_input_features - 1 downto 0);
-    in_weights  : in nn_io_matrix(nof_input_features - 1 downto 0);
+    in_features : in nn_io_matrix(nof_in_features - 1 downto 0);
+    in_weights  : in nn_io_matrix(nof_in_features - 1 downto 0);
 
     -- output signals
-    outputs : out nn_io_vector(2*m + 1 downto -n)
+    outputs : out nn_io_vector_prod
   );
 end neuron_rtl; 
 
 -------------- Architecture
 
 architecture rtl of neuron_rtl is
-
-  signal input_features_signal : nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'));
-  signal input_weights_signal : nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'));
-
+  signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0)  := (others => (others => '0'));
+  signal in_weights_sig  : nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'));
 begin
 
-  -- Reset process
-  reset : process(clk) is
+  reset : process(clk, rst) is
   begin
     if rising_edge(clk) then
       if rst = '1' then
-        in_features <= (others => (otheres => '0'));
-        in_weights <= (others => (otheres => '0'));
+        in_features_sig <= in_features;
+        in_weights_sig  <= in_weights;
       end if;
     end if;
   end process;
 
-  -- SoP process (Sum of Products)
-  SoP : process()
-
-
+  SoP : process(in_features_sig) is
+    variable sum_prod : nn_io_vector_prod;
+  begin
+    if rising_edge(clk) then
+      product_loop: for i in 1 to nof_in_features loop
+        sum_prod := sum_prod + in_features(i) * in_weights(i);
+      end loop;
+    end if;
+    outputs <= sum_prod;
+  end process;
 end architecture;
