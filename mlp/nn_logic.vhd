@@ -7,7 +7,6 @@
 
 -------------- Std Libraries
 library ieee;
-use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- Fixed point lib
@@ -15,11 +14,10 @@ library floatfixlib;
 use floatfixlib.fixed_pkg.all;
 
 package nn_logic is
-  generic(
-    -- Integer bits
-    m : integer := 5;
-    -- Fractional bits
-    n : integer := 8);
+
+  -- Qm,n sizes
+	constant m: integer := 16; --! Size of the integer part
+	constant n: integer := 16; --! Size of the fractionary part
 
   -- sfixed type extensions
   subtype nn_io_vector_prod is sfixed(2*m + 1 downto -n);

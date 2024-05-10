@@ -13,31 +13,27 @@ use work.nn_logic.all;
 
 -------------- Entity
 
-entity neuron_rtl is
+entity neuron is
   generic(
-    nof_in_features : integer := 2;
-    nof_out_features : integer := 1;
-    m : integer := 4;
-    n : integer := 8
-  );
+    nof_in_features : integer := 2);
 
   port(
-   -- utility signals
+   -- control ports
     clk : in std_logic;
-		rst : in std_logic;
+    rst : in std_logic;
 
-    -- input signals
+    -- input ports
     in_features : in nn_io_matrix(nof_in_features - 1 downto 0);
     in_weights  : in nn_io_matrix(nof_in_features - 1 downto 0);
 
-    -- output signals
+    -- output ports
     outputs : out nn_io_vector_prod
   );
-end neuron_rtl; 
+end neuron; 
 
 -------------- Architecture
 
-architecture rtl of neuron_rtl is
+architecture rtl of neuron is
   signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0)  := (others => (others => '0'));
   signal in_weights_sig  : nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'));
 begin
@@ -46,6 +42,9 @@ begin
   begin
     if rising_edge(clk) then
       if rst = '1' then
+        in_features_sig <= (others => (others => '0'));
+        in_weights_sig  <= (others => (others => '0'));
+      else
         in_features_sig <= in_features;
         in_weights_sig  <= in_weights;
       end if;
