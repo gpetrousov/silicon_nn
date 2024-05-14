@@ -1,3 +1,8 @@
+-- nn_logic library
+package nn_io_logic is new work.nn_logic
+  generic map(m => 8, n => 8);
+use work.nn_io_logic.all;
+
 -------------- Std Libraries
 library ieee;
 use ieee.std_logic_1164.all;
@@ -6,9 +11,6 @@ use ieee.std_logic_1164.all;
 LIBRARY ieee;
 Library floatfixlib; 
 use floatfixlib.fixed_pkg.all;
-
--- nn_logic library
-use work.nn_logic.all;
 
 
 -------------- Entity
@@ -23,15 +25,15 @@ architecture sim of neuron_tb is
   constant clk_freq : integer := 10e6; -- 10 MHz
 
   -- input signals
-  signal in_features_tb : nn_io_matrix(2 downto 1);
-  signal in_weights_tb  : nn_io_matrix(2 downto 1);
+  signal in_features_tb : nn_io_matrix(1 downto 0);
+  signal in_weights_tb  : nn_io_matrix(1 downto 0);
 
   -- control signals
   signal clk_tb : std_logic := '0';
   signal rst_tb : std_logic := '0';
 
   -- output signals
-  signal outputs_tb : nn_io_vector_prod;
+  signal outputs_tb : sfixed(17 downto -16);
 begin
 
   DUT_neuron : entity work.neuron(rtl)
@@ -40,7 +42,7 @@ begin
       in_weights  => in_weights_tb,
       clk         => clk_tb,
       rst         => rst_tb,
-      outputs     => outputs_tb);
+      output      => outputs_tb);
 
   clk_process : process is
   begin
@@ -55,28 +57,28 @@ begin
       case i is
 
         when 0 =>
-          in_features_tb(1) <= to_sfixed(0, 16, -16);
-          in_features_tb(2) <= to_sfixed(0, 16, -16);
-          in_weights_tb(1) <= to_sfixed(1, 16, -16);
-          in_weights_tb(2) <= to_sfixed(1, 16, -16);
+          in_features_tb(0) <= to_sfixed(1, 8, -8);
+          in_features_tb(1) <= to_sfixed(2, 8, -8);
+          in_weights_tb(0) <= to_sfixed(3, 8, -8);
+          in_weights_tb(1) <= to_sfixed(4, 8, -8);
 
         when 1 =>
-          in_features_tb(1) <= to_sfixed(0, 16, -16);
-          in_features_tb(2) <= to_sfixed(1, 16, -16);
-          in_weights_tb(1) <= to_sfixed(1, 16, -16);
-          in_weights_tb(2) <= to_sfixed(1, 16, -16);
+          in_features_tb(0) <= to_sfixed(0, 8, -8);
+          in_features_tb(1) <= to_sfixed(1, 8, -8);
+          in_weights_tb(0) <= to_sfixed(1, 8, -8);
+          in_weights_tb(1) <= to_sfixed(1, 8, -8);
 
         when 2 =>
-          in_features_tb(1) <= to_sfixed(1, 16, -16);
-          in_features_tb(2) <= to_sfixed(0, 16, -16);
-          in_weights_tb(1) <= to_sfixed(1, 16, -16);
-          in_weights_tb(2) <= to_sfixed(1, 16, -16);
+          in_features_tb(0) <= to_sfixed(1, 8, -8);
+          in_features_tb(1) <= to_sfixed(0, 8, -8);
+          in_weights_tb(0) <= to_sfixed(1, 8, -8);
+          in_weights_tb(1) <= to_sfixed(1, 8, -8);
 
         when 3 =>
-          in_features_tb(1) <= to_sfixed(1, 16, -16);
-          in_features_tb(2) <= to_sfixed(1, 16, -16);
-          in_weights_tb(1) <= to_sfixed(1, 16, -16);
-          in_weights_tb(2) <= to_sfixed(1, 16, -16);
+          in_features_tb(0) <= to_sfixed(1, 8, -8);
+          in_features_tb(1) <= to_sfixed(1, 8, -8);
+          in_weights_tb(0) <= to_sfixed(1, 8, -8);
+          in_weights_tb(1) <= to_sfixed(1, 8, -8);
 
       end case;
     end loop;
