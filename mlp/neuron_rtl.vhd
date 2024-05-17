@@ -45,6 +45,8 @@ architecture rtl of neuron is
 
   type prod_sig_matrix is array(nof_in_features -1 downto 0) of sfixed(17 downto -16);
   signal prod_sig : prod_sig_matrix := (others => (others => '0'));
+
+  signal sum_sig : sfixed(17 downto -16);
 begin
 
   main : process(clk) is
@@ -76,19 +78,26 @@ begin
               next_state <= multiply;
             else
               next_state <= sum;
+              index := 0;
             end if;
 
           when sum =>
             report "Sum state";
-            index := 0;
             -- sum for loop
-            next_state <= idle;
+            if index < nof_in_features then
+              sum_sig <= resize(sum_sig + prod_sig(index), 17, -16);
+              index := index + 1;
+              next_state <= sum;
+            else
+              next_state <= act_func;
+              index :=0;
+            end if;
 
           when act_func =>
             report "Act func state";
             -- sum for loop
             output <= to_sfixed(1, 17, -16);
-            next_state <= idle;
+            next_state <= reg_inputs;
 
         end case;
       end if;
