@@ -37,35 +37,63 @@ end neuron;
 -------------- Architecture
 
 architecture rtl of neuron is
+  type t_state is (idle, reg_inputs, multiply, sum, act_func);
+  signal current_state, next_state: t_state;
+
+  signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0);
+  signal in_weights_sig : nn_io_matrix(nof_in_features -1 downto 0);
+
   type prod_sig_matrix is array(nof_in_features -1 downto 0) of sfixed(17 downto -16);
-  subtype sum_sig_vector is sfixed(17 downto -16);
-
-  signal in_features_sig : nn_io_matrix(nof_in_features - 1 downto 0)  := in_features;
-  signal in_weights_sig  : nn_io_matrix(nof_in_features - 1 downto 0)  := in_weights;
-
-  signal prod_sig        : prod_sig_matrix                             := (others => (others =>'0'));
-  signal sum_sig         : sum_sig_vector                              := (others => '0');
+  signal prod_sig : prod_sig_matrix := (others => (others => '0'));
 begin
 
-  process(clk) is
-
+  main : process(clk) is
+    variable index : integer := 0;
   begin
     if rising_edge(clk) then
+      if rst = '1' then
+        current_state <= idle;
+      else
+        current_state <= next_state;
+        case current_state is
 
-      -- MAC here
-      for i in 0 to nof_in_features-1 loop
-        report "Multiply Loop : " & "i=" & integer'image(i);
-        prod_sig(i) <= in_features_sig(i) * in_weights_sig(i);
-      end loop;
+          when idle =>
+            report "Idling";
+            --- ops code
+            next_state <= reg_inputs;
 
-      for j in 0 to nof_in_features-1 loop
-        report "Sum Loop: " & "i=" & integer'image(j);
-        sum_sig <= resize(sum_sig + prod_sig(j), 17, -16);
-      end loop;
+          when reg_inputs =>
+            report "Registering inputs";
+            in_features_sig <= in_features;
+            in_weights_sig <= in_weights;
+            next_state <= multiply;
 
+          when multiply =>
+            report "Multiply state";
+            if index < nof_in_features then
+              prod_sig(index) <= in_features_sig(index) * in_weights_sig(index);
+              index := index + 1;
+              next_state <= multiply;
+            else
+              next_state <= sum;
+            end if;
+
+          when sum =>
+            report "Sum state";
+            index := 0;
+            -- sum for loop
+            next_state <= idle;
+
+          when act_func =>
+            report "Act func state";
+            -- sum for loop
+            output <= to_sfixed(1, 17, -16);
+            next_state <= idle;
+
+        end case;
+      end if;
     end if;
   end process;
 
-  -- Output from entity
-  output <= sum_sig;
+
 end architecture;
