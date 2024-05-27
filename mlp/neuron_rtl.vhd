@@ -37,7 +37,7 @@ end neuron;
 -------------- Architecture
 
 architecture rtl of neuron is
-  type t_state is (idle, reg_inputs, multiply, sum, act_func);
+  type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_reset, act_func);
   signal current_state, next_state: t_state;
 
   signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0);
@@ -46,7 +46,7 @@ architecture rtl of neuron is
   type prod_sig_matrix is array(nof_in_features -1 downto 0) of sfixed(17 downto -16);
   signal prod_sig : prod_sig_matrix := (others => (others => '0'));
 
-  signal sum_sig : sfixed(17 downto -16);
+  signal sum_sig : sfixed(17 downto -16) := (others => '0');
 begin
 
   main : process(clk) is
@@ -77,21 +77,29 @@ begin
               index := index + 1;
               next_state <= multiply;
             else
-              next_state <= sum;
-              index := 0;
+              next_state <= mult_reset;
             end if;
+
+          when mult_reset =>
+            report "Multiply reset state";
+            index := 0;
+            next_state <= sum;
 
           when sum =>
             report "Sum state";
             -- sum for loop
             if index < nof_in_features then
-              sum_sig <= resize(sum_sig + prod_sig(index), 17, -16);
+              sum_sig <= resize(sum_sig, 16, -16) + resize(prod_sig(index), 16, -16);
               index := index + 1;
               next_state <= sum;
             else
-              next_state <= act_func;
-              index :=0;
+              next_state <= sum_reset;
             end if;
+
+          when sum_reset =>
+            report "Sum reset state";
+            index := 0;
+            next_state <= act_func;
 
           when act_func =>
             report "Act func state";
