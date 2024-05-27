@@ -27,6 +27,7 @@ architecture sim of neuron_tb is
   -- input signals
   signal in_features_tb : nn_io_matrix(1 downto 0);
   signal in_weights_tb  : nn_io_matrix(1 downto 0);
+  signal in_bias_tb     : nn_io_vector;
 
   -- control signals
   signal clk_tb : std_logic := '0';
@@ -40,6 +41,7 @@ begin
     port map(
       in_features => in_features_tb,
       in_weights  => in_weights_tb,
+      in_bias     => in_bias_tb,
       clk         => clk_tb,
       rst         => rst_tb,
       output      => outputs_tb);
@@ -57,8 +59,9 @@ begin
     wait for 100 ns;
     in_features_tb(0) <= to_sfixed(11.5, 8, -8);
     in_features_tb(1) <= to_sfixed(8.2, 8, -8);
-    in_weights_tb(0) <= to_sfixed(3.7, 8, -8);
-    in_weights_tb(1) <= to_sfixed(4.1, 8, -8);
+    in_weights_tb(0)  <= to_sfixed(3.7, 8, -8);
+    in_weights_tb(1)  <= to_sfixed(4.1, 8, -8);
+    in_bias_tb        <= to_sfixed(-1.2, 8, -8);
     rst_tb <= '0';
     wait for 100 ns;
     wait;

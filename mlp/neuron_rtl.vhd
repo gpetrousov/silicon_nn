@@ -28,6 +28,7 @@ entity neuron is
     -- input ports
     in_features : in nn_io_matrix(nof_in_features - 1 downto 0);
     in_weights  : in nn_io_matrix(nof_in_features - 1 downto 0);
+    in_bias     : in nn_io_vector;
 
     -- output ports
     output : out sfixed(17 downto -16)
@@ -37,11 +38,12 @@ end neuron;
 -------------- Architecture
 
 architecture rtl of neuron is
-  type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_reset, act_func);
+  type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_bias, act_func);
   signal current_state, next_state: t_state;
 
   signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0);
-  signal in_weights_sig : nn_io_matrix(nof_in_features -1 downto 0);
+  signal in_weights_sig  : nn_io_matrix(nof_in_features -1 downto 0);
+  signal in_bias_sig     : nn_io_vector;
 
   type prod_sig_matrix is array(nof_in_features -1 downto 0) of sfixed(17 downto -16);
   signal prod_sig : prod_sig_matrix := (others => (others => '0'));
@@ -67,7 +69,8 @@ begin
           when reg_inputs =>
             report "Registering inputs";
             in_features_sig <= in_features;
-            in_weights_sig <= in_weights;
+            in_weights_sig  <= in_weights;
+            in_bias_sig     <= in_bias;
             next_state <= multiply;
 
           when multiply =>
@@ -93,11 +96,12 @@ begin
               index := index + 1;
               next_state <= sum;
             else
-              next_state <= sum_reset;
+              next_state <= sum_bias;
             end if;
 
-          when sum_reset =>
-            report "Sum reset state";
+          when sum_bias =>
+            report "Sum bias state";
+            sum_sig <= resize(sum_sig, 16, -16) + resize(in_bias_sig, 16, -16);
             index := 0;
             next_state <= act_func;
 
