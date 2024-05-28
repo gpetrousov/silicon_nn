@@ -57,11 +57,11 @@ begin
     wait for 50 ns;
     rst_tb <= '1';
     wait for 100 ns;
-    in_features_tb(0) <= to_sfixed(11.5, 8, -8);
-    in_features_tb(1) <= to_sfixed(8.2, 8, -8);
-    in_weights_tb(0)  <= to_sfixed(3.7, 8, -8);
-    in_weights_tb(1)  <= to_sfixed(4.1, 8, -8);
-    in_bias_tb        <= to_sfixed(-1.2, 8, -8);
+    in_features_tb(0) <= to_sfixed(5, 8, -8);
+    in_features_tb(1) <= to_sfixed(-2, 8, -8);
+    in_weights_tb(0)  <= to_sfixed(4, 8, -8);
+    in_weights_tb(1)  <= to_sfixed(2, 8, -8);
+    in_bias_tb        <= to_sfixed(1, 8, -8);
     rst_tb <= '0';
     wait for 100 ns;
     wait;

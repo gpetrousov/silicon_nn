@@ -53,6 +53,7 @@ begin
 
   main : process(clk) is
     variable index : integer := 0;
+    variable bias_done : std_logic := '0';
   begin
     if rising_edge(clk) then
       if rst = '1' then
@@ -101,12 +102,16 @@ begin
 
           when sum_bias =>
             report "Sum bias state";
-            sum_sig <= resize(sum_sig, 16, -16) + resize(in_bias_sig, 16, -16);
+            if bias_done = '0' then
+              sum_sig <= resize(sum_sig, 16, -16) + resize(in_bias_sig, 16, -16);
+              bias_done := '1';
+            end if;
             index := 0;
             next_state <= reg_outputs;
 
           when reg_outputs =>
             report "Act func state";
+            bias_done := '0';
             output <= sum_sig;
             next_state <= reg_inputs;
 
