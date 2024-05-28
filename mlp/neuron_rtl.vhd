@@ -38,7 +38,7 @@ end neuron;
 -------------- Architecture
 
 architecture rtl of neuron is
-  type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_bias, act_func);
+  type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_bias, reg_outputs);
   signal current_state, next_state: t_state;
 
   signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0);
@@ -103,9 +103,9 @@ begin
             report "Sum bias state";
             sum_sig <= resize(sum_sig, 16, -16) + resize(in_bias_sig, 16, -16);
             index := 0;
-            next_state <= act_func;
+            next_state <= reg_outputs;
 
-          when act_func =>
+          when reg_outputs =>
             report "Act func state";
             output <= sum_sig;
             next_state <= reg_inputs;
