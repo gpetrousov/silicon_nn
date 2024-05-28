@@ -107,8 +107,7 @@ begin
 
           when act_func =>
             report "Act func state";
-            -- sum for loop
-            output <= to_sfixed(1, 17, -16);
+            output <= sum_sig;
             next_state <= reg_inputs;
 
         end case;
