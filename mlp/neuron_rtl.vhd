@@ -1,7 +1,7 @@
--- nn_logic library
-package nn_io_logic is new work.nn_logic
+-- nn_logic library - 8bit
+package nn_io_logic_8dn8bit is new work.nn_logic
   generic map(m => 8, n => 8);
-use work.nn_io_logic.all;
+use work.nn_io_logic_8dn8bit.all;
 
 -------------- Std Libraries
 library ieee;
@@ -26,9 +26,9 @@ entity neuron is
     rst : in std_logic;
 
     -- input ports
-    in_features : in nn_io_matrix(nof_in_features - 1 downto 0);
-    in_weights  : in nn_io_matrix(nof_in_features - 1 downto 0);
-    in_bias     : in nn_io_vector;
+    in_features : in work.nn_io_logic_8dn8bit.nn_io_matrix(nof_in_features - 1 downto 0);
+    in_weights  : in work.nn_io_logic_8dn8bit.nn_io_matrix(nof_in_features - 1 downto 0);
+    in_bias     : in work.nn_io_logic_8dn8bit.nn_io_vector;
 
     -- output ports
     output : out sfixed(17 downto -16)
@@ -41,9 +41,9 @@ architecture rtl of neuron is
   type t_state is (idle, reg_inputs, multiply, mult_reset, sum, sum_bias, reg_outputs);
   signal current_state, next_state: t_state;
 
-  signal in_features_sig : nn_io_matrix(nof_in_features -1 downto 0);
-  signal in_weights_sig  : nn_io_matrix(nof_in_features -1 downto 0);
-  signal in_bias_sig     : nn_io_vector;
+  signal in_features_sig : work.nn_io_logic_8dn8bit.nn_io_matrix(nof_in_features -1 downto 0);
+  signal in_weights_sig  : work.nn_io_logic_8dn8bit.nn_io_matrix(nof_in_features -1 downto 0);
+  signal in_bias_sig     : work.nn_io_logic_8dn8bit.nn_io_vector;
 
   type prod_sig_matrix is array(nof_in_features -1 downto 0) of sfixed(17 downto -16);
   signal prod_sig : prod_sig_matrix := (others => (others => '0'));
@@ -113,7 +113,7 @@ begin
             report "Act func state";
             bias_done := '0';
             output <= sum_sig;
-            next_state <= reg_inputs;
+            next_state <= idle;
 
         end case;
       end if;

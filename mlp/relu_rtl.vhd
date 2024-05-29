@@ -1,7 +1,7 @@
--- nn_logic library
-package nn_io_logic is new work.nn_logic
+-- nn_logic library - 17bit
+package nn_io_logic_17dn16bit is new work.nn_logic
   generic map(m => 17, n => 16);
-use work.nn_io_logic.all;
+use work.nn_io_logic_17dn16bit.all;
 
 -------------- Std Libraries
 library ieee;
@@ -26,10 +26,10 @@ entity relu is
     rst : in std_logic;
 
     -- input port
-    inputs: in nn_io_matrix(nof_in_features - 1 downto 0);
+    inputs: in work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features - 1 downto 0);
 
     -- output port
-    outputs : out nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'))
+    outputs : out work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'))
   );
 end relu; 
 
@@ -40,8 +40,8 @@ architecture rtl of relu is
   type t_state is (idle, reg_inputs, compare, reg_outputs);
 
   signal current_state, next_state: t_state;
-  signal inputs_sig : nn_io_matrix(nof_in_features -1 downto 0);
-  signal filtered_inputs_sig : nn_io_matrix(nof_in_features -1 downto 0);
+  signal inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features -1 downto 0);
+  signal filtered_inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features -1 downto 0);
 
 begin
   main : process(clk)

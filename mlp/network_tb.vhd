@@ -1,7 +1,13 @@
--- nn_logic library
-package nn_io_logic is new work.nn_logic
+-- nn_logic library - 8bit
+package nn_io_logic_8dn8bit is new work.nn_logic
   generic map(m => 8, n => 8);
-use work.nn_io_logic.all;
+use work.nn_io_logic_8dn8bit.all;
+
+-- nn_logic library - 17bit
+package nn_io_logic_17dn16bit is new work.nn_logic
+  generic map(m => 17, n => 16);
+use work.nn_io_logic_17dn16bit.all;
+
 
 -------------- Std Libraries
 library ieee;
@@ -26,8 +32,8 @@ architecture sim of network_tb is
   constant clk_freq : integer := 10e6; -- 10 MHz
 
   -- input signals
-  signal in_features_n1_tb : nn_io_matrix(1 downto 0);
-  signal in_features_n2_tb : nn_io_matrix(1 downto 0);
+  signal in_features_n1_tb : work.nn_io_logic_8dn8bit.nn_io_matrix(1 downto 0);
+  signal in_features_n2_tb : work.nn_io_logic_8dn8bit.nn_io_matrix(1 downto 0);
 
   -- control signals
   signal clk_tb : std_logic := '0';
@@ -36,6 +42,8 @@ architecture sim of network_tb is
   -- output signals
   signal output_n1_tb : sfixed(17 downto -16);
   signal output_n2_tb : sfixed(17 downto -16);
+
+  signal output_l2_tb : work.nn_io_logic_17dn16bit.nn_io_matrix(1 downto 0);
 
 begin
 
@@ -49,7 +57,9 @@ begin
     in_features_n2 => in_features_n2_tb,
 
     out_n1 => output_n1_tb,
-    out_n2 => output_n2_tb);
+    out_n2 => output_n2_tb,
+    out_l2 => output_l2_tb
+  );
 
   clk_process : process is
   begin

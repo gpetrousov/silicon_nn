@@ -1,7 +1,7 @@
--- nn_logic library
-package nn_io_logic is new work.nn_logic
+-- nn_logic library - 8bit
+package nn_io_logic_8dn8bit is new work.nn_logic
   generic map(m => 8, n => 8);
-use work.nn_io_logic.all;
+use work.nn_io_logic_8dn8bit.all;
 
 -------------- Std Libraries
 library ieee;
@@ -25,9 +25,9 @@ architecture sim of neuron_tb is
   constant clk_freq : integer := 10e6; -- 10 MHz
 
   -- input signals
-  signal in_features_tb : nn_io_matrix(1 downto 0);
-  signal in_weights_tb  : nn_io_matrix(1 downto 0);
-  signal in_bias_tb     : nn_io_vector;
+  signal in_features_tb : work.nn_io_logic_8dn8bit.nn_io_matrix(1 downto 0);
+  signal in_weights_tb  : work.nn_io_logic_8dn8bit.nn_io_matrix(1 downto 0);
+  signal in_bias_tb     : work.nn_io_logic_8dn8bit.nn_io_vector;
 
   -- control signals
   signal clk_tb : std_logic := '0';
