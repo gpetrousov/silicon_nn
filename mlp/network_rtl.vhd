@@ -27,8 +27,9 @@ entity network is
   );
   port(
    -- control ports
-    clk : in std_logic;
-    rst : in std_logic;
+    clk          : in std_logic;
+    rst_neuron   : in std_logic;
+    rst_act_func : in std_logic;
 
     -- I/O ports
     in_features_n1 : in work.nn_io_logic_8dn8bit.nn_io_matrix(nof_in_features - 1 downto 0);
@@ -66,7 +67,7 @@ begin
   Neuron_1 : entity work.neuron(rtl)
   port map(
     clk => clk,
-    rst => rst,
+    rst => rst_neuron,
     in_features => in_features_n1,
     in_weights => weights_n1,
     in_bias => bias_n1,
@@ -75,7 +76,7 @@ begin
   Neuron_2 : entity work.neuron(rtl)
   port map(
     clk => clk,
-    rst => rst,
+    rst => rst_neuron,
     in_features => in_features_n2,
     in_weights => weights_n2,
     in_bias => bias_n2,
@@ -85,7 +86,7 @@ begin
   ReLU : entity work.relu(rtl)
   port map(
   clk => clk,
-  rst => rst,
+  rst => rst_act_func,
   inputs => input_l2,
   outputs => output_l2);
 
