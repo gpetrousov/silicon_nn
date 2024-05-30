@@ -1,6 +1,5 @@
 -- nn_logic library - 17bit
-package nn_io_logic_17dn16bit is new work.nn_logic
-  generic map(m => 17, n => 16);
+package nn_io_logic_17dn16bit is new work.nn_logic_17dn16;
 use work.nn_io_logic_17dn16bit.all;
 
 -------------- Std Libraries

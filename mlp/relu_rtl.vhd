@@ -1,6 +1,5 @@
 -- nn_logic library - 17bit
-package nn_io_logic_17dn16bit is new work.nn_logic
-  generic map(m => 17, n => 16);
+package nn_io_logic_17dn16bit is new work.nn_logic_17dn16;
 use work.nn_io_logic_17dn16bit.all;
 
 -------------- Std Libraries
@@ -16,20 +15,16 @@ use floatfixlib.fixed_pkg.all;
 -------------- Entity
 
 entity relu is
-  generic(
-    nof_in_features : integer := 2 -- To be equal to number of neuron from previous layer
-  );
-
   port(
     -- control ports
     clk : in std_logic;
     rst : in std_logic;
 
     -- input port
-    inputs: in work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features - 1 downto 0);
+    inputs: in work.nn_io_logic_17dn16bit.nn_io_matrix(2 - 1 downto 0);
 
     -- output port
-    outputs : out work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features - 1 downto 0) := (others => (others => '0'))
+    outputs : out work.nn_io_logic_17dn16bit.nn_io_matrix(2 - 1 downto 0) := (others => (others => '0'))
   );
 end relu; 
 
@@ -40,8 +35,8 @@ architecture rtl of relu is
   type t_state is (idle, reg_inputs, compare, reg_outputs);
 
   signal current_state, next_state: t_state;
-  signal inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features -1 downto 0);
-  signal filtered_inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(nof_in_features -1 downto 0);
+  signal inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(2 -1 downto 0);
+  signal filtered_inputs_sig : work.nn_io_logic_17dn16bit.nn_io_matrix(2 -1 downto 0);
 
 begin
   main : process(clk)
@@ -67,7 +62,7 @@ begin
 
           when compare =>
             report "ReLU - Current state: compare";
-            if index < nof_in_features then
+            if index < 2 then
 
               if inputs_sig(index) > to_sfixed(0, 17, -16) then
                 filtered_inputs_sig(index) <= inputs_sig(index);
