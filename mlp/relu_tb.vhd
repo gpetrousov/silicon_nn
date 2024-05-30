@@ -52,7 +52,7 @@ begin
   begin
     wait for 30 ns;
     rst_tb <= '1';
-    wait for 30 ns;
+    wait for 600 ns;
     rst_tb <= '0';
     wait for 30 ns;
     inputs_tb(0) <= to_sfixed(5.2, 17, -16);

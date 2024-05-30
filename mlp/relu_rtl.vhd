@@ -50,25 +50,31 @@ begin
     if rising_edge(clk) then
       if rst = '1' then
         current_state <= idle;
+        next_state <= idle;
       else
         current_state <= next_state;
 
         case current_state is
 
           when idle =>
+            report "ReLU - Current state: idle";
             next_state <= reg_inputs;
 
           when reg_inputs =>
+            report "ReLU - Current state: reg_inputs";
             inputs_sig <= inputs;
             next_state <= compare;
 
           when compare =>
+            report "ReLU - Current state: compare";
             if index < nof_in_features then
 
               if inputs_sig(index) > to_sfixed(0, 17, -16) then
                 filtered_inputs_sig(index) <= inputs_sig(index);
+                report "===================> RELU : MAJOR <==================";
               else
                 filtered_inputs_sig(index) <= to_sfixed(0, 17, -16);
+                report "===================> RELU : MINOR <==================";
               end if;
               index := index + 1;
             else
@@ -76,9 +82,9 @@ begin
             end if;
 
           when reg_outputs =>
-            report "Reg outputs state";
+            report "ReLU - Current state: reg_outputs";
             outputs <= filtered_inputs_sig;
-            next_state <= reg_inputs;
+            next_state <= idle;
 
         end case;
       end if;
