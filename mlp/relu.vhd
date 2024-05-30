@@ -1,6 +1,5 @@
 -- nn_logic library - 17bit
 library work;
---package nn_io_logic_17dn16bit is new work.nn_io_logic_17dn16bit;
 use work.nn_io_logic_17dn16bit.all;
 
 -------------- Std Libraries
